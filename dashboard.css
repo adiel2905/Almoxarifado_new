@@ -1,0 +1,694 @@
+ashboard_profissional.css
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 205px 0 40px;
+    width: 100%;
+    overflow-x: hidden;
+    background: #f4f5f7;
+    color: #2b2f33;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* =========================================================
+   CABEÇALHO PRINCIPAL
+========================================================= */
+
+.header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 92px;
+    padding: 0 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(110deg, #dc2b27 0%, #ed5a1c 58%, #f28a10 100%);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.titulo-header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #fff;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.titulo-header img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+}
+
+#btn-sair {
+    position: absolute;
+
+    min-width: 88px;
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255,255,255,.58);
+    border-radius: 7px;
+    background: rgba(255,255,255,.10);
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background .2s ease, border-color .2s ease;
+      right: 100px;
+}
+
+#btn-sair:hover {
+    background: rgba(255,255,255,.20);
+    border-color: #fff;
+}
+
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
+.segundo-header {
+    position: fixed;
+    top: 92px;
+    left: 0;
+    z-index: 999;
+
+    width: 100%;
+    height: 54px;
+    padding: 0 34px;
+
+    display: flex;
+    align-items: center;
+
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(20, 25, 30, .04);
+}
+
+.segundo-header nav {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+}
+
+nav button {
+    position: relative;
+    min-width: 112px;
+    padding: 0 16px;
+
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #555b61;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: color .2s ease, background .2s ease;
+}
+
+nav button:hover {
+    background: #f7f7f8;
+    color: #df4b22;
+}
+
+nav button::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+    height: 2px;
+    background: transparent;
+}
+
+nav button:first-child {
+    color: #df4b22;
+}
+
+nav button:first-child::after {
+    background: #df4b22;
+}
+
+/* =========================================================
+   BARRA DE AÇÕES
+========================================================= */
+
+.area-botoes {
+    position: fixed;
+    top: 146px;
+    left: 0;
+    z-index: 998;
+
+    width: 100%;
+    height: 59px;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #f4f5f7;
+    border-bottom: 1px solid #e6e8eb;
+}
+
+.btn-adicionar,
+.btn-retirar {
+    margin: 0;
+    padding: 10px 16px;
+
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    box-shadow: none;
+    transition: background .2s ease, transform .15s ease;
+}
+
+.btn-adicionar {
+    background: #198754;
+}
+
+.btn-adicionar:hover {
+    background: #146c43;
+    transform: translateY(-1px);
+}
+
+.btn-retirar {
+    background: #c93a36;
+}
+
+.btn-retirar:hover {
+    background: #ad302d;
+    transform: translateY(-1px);
+}
+
+
+.boas-vindas {
+    margin: 0 0 0 auto;
+    color: #4d5358;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   FORMULÁRIOS
+========================================================= */
+
+.formulario {
+    display: none;
+
+    /* O formulário agora abre como uma janela central,
+       independente da posição do scroll da página. */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1200;
+    transform: translate(-50%, -50%);
+
+    width: min(430px, calc(100% - 40px));
+    max-height: calc(100vh - 40px);
+    margin: 0;
+    padding: 24px;
+    overflow-y: auto;
+
+    background: #fff;
+    border: 1px solid #e2e5e9;
+    border-radius: 9px;
+    box-shadow: 0 18px 55px rgba(31, 41, 55, .28);
+}
+
+.formulario h2 {
+    margin: 0 0 20px;
+    color: #25292d;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.formulario p {
+    margin: -8px 0 16px;
+    color: #666d74;
+    font-size: 13px;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 7px;
+    color: #4b5157;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.formulario input,
+.formulario select,
+#responsavelRetirada {
+    width: 100%;
+    min-height: 42px;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+
+    border: 1px solid #d7dbe0;
+    border-radius: 6px;
+    background: #fff;
+    color: #2f3439;
+
+    font-size: 13px;
+    outline: none;
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.formulario input::placeholder,
+#responsavelRetirada::placeholder,
+#pesquisaTabela::placeholder {
+    color: #9aa0a6;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+#responsavelRetirada:focus {
+    border-color: #e56b35;
+    box-shadow: 0 0 0 3px rgba(229,107,53,.10);
+}
+
+.formulario > button,
+.formulario label > button,
+.btn-confirmar-retirada {
+    min-height: 41px;
+    margin-top: 5px;
+    padding: 10px 17px;
+
+    border: 0;
+    border-radius: 6px;
+    background: #198754;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+
+    transition: background .2s ease;
+}
+
+.formulario > button:hover,
+.formulario label > button:hover,
+.btn-confirmar-retirada:hover {
+    background: #146c43;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-confirmar-retirada {
+    width: 100%;
+}
+
+/* =========================================================
+   ÁREA PRINCIPAL / PRODUTOS
+========================================================= */
+
+.caixa-produtos {
+    width: 90%;
+    max-width: 1480px;
+    margin: 28px auto 0;
+    padding: 0;
+
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 9px;
+    box-shadow: 0 4px 14px rgba(31, 41, 55, .055);
+}
+
+.cabecalho-produtos {
+    min-width: 880px;
+    margin: 0;
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-bottom: 1px solid #e8eaed;
+}
+
+.caixa-produtos h2 {
+    margin: 0;
+    color: #272b30;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.filtros {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+#pesquisaTabela,
+#filtroOrdenacao {
+    min-height: 39px;
+    padding: 9px 12px;
+
+    border: 1px solid #d8dce1;
+    border-radius: 6px;
+    background: #fff;
+    color: #383d42;
+
+    font-size: 12.5px;
+    outline: none;
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+#pesquisaTabela {
+    width: 270px;
+}
+
+#filtroOrdenacao {
+    min-width: 150px;
+    cursor: pointer;
+}
+
+#pesquisaTabela:focus,
+#filtroOrdenacao:focus {
+    border-color: #e56b35;
+    box-shadow: 0 0 0 3px rgba(229,107,53,.09);
+}
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+table {
+    width: 100%;
+    min-width: 880px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+thead {
+    background: #f7f8f9;
+}
+
+th {
+    padding: 12px 16px;
+    border-bottom: 1px solid #dfe3e7;
+
+    background: #f7f8f9;
+    color: #60666d;
+    text-align: left;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .35px;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #eceef0;
+
+    color: #34393e;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+tbody tr {
+    background: #fff;
+    transition: background .15s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: #fcfcfd;
+}
+
+tbody tr:hover {
+    background: #fff8f4;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+td:last-child {
+    white-space: nowrap;
+}
+
+/* =========================================================
+   BOTÕES DA TABELA
+========================================================= */
+
+.editar,
+.movimentar,
+.excluir,
+.btn-seta {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    padding: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+    cursor: pointer;
+    vertical-align: middle;
+
+    transition: background .18s ease, border-color .18s ease, transform .15s ease;
+}
+
+.editar {
+    border: 1px solid #e6b04a;
+    background: #fff8e8;
+    color: #9a6500;
+}
+
+.editar:hover {
+    background: #ffefc7;
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.movimentar {
+    border: 1px solid #ef9c52;
+    background: #fff4e9;
+    color: #b85a12;
+}
+
+.movimentar:hover {
+    background: #ffe8d2;
+    color: #9d480a;
+    transform: translateY(-1px);
+}
+
+.excluir {
+    border: 1px solid #e28b88;
+    background: #fff1f0;
+    color: #b92f2b;
+}
+
+.excluir:hover {
+    background: #ffe0de;
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.btn-seta {
+    margin-right: 0;
+    border: 1px solid #d7dbe0;
+    background: #f8f9fa;
+    color: #5e646a;
+    font-size: 18px;
+}
+
+.btn-seta:hover {
+    background: #eceff2;
+    transform: none;
+}
+
+/* =========================================================
+   DETALHES DO PRODUTO
+========================================================= */
+
+.linha-seta td {
+    padding: 5px 16px;
+    text-align: center;
+    background: #fafbfc;
+}
+
+.linha-detalhes td {
+    padding: 18px 20px;
+    background: #f8f9fa;
+}
+
+.campo-detalhes {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    resize: vertical;
+
+    border: 1px solid #d8dce1;
+    border-radius: 6px;
+    background: #fff;
+    color: #34393e;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    outline: none;
+}
+
+.campo-detalhes:focus {
+    border-color: #e56b35;
+    box-shadow: 0 0 0 3px rgba(229,107,53,.09);
+}
+
+.salvar-detalhes {
+    margin-top: 10px;
+    padding: 9px 15px;
+
+    border: 0;
+    border-radius: 6px;
+    background: #198754;
+    color: #fff;
+
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background .2s ease;
+}
+
+.salvar-detalhes:hover {
+    background: #146c43;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+    body {
+        padding-top: 195px;
+    }
+
+    .header-principal {
+        height: 86px;
+        padding: 0 20px;
+    }
+
+    .titulo-header {
+        font-size: 22px;
+    }
+
+    .titulo-header img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .segundo-header {
+        top: 86px;
+        padding: 0 14px;
+    }
+
+    .area-botoes {
+        top: 140px;
+        height: 55px;
+        padding: 0 3%;
+    }
+
+    .caixa-produtos {
+        width: 94%;
+    }
+
+    .formulario {
+        margin-left: 3%;
+    }
+}
+
+@media (max-width: 700px) {
+    .header-principal {
+        padding: 0 14px;
+    }
+
+    .titulo-header {
+        gap: 8px;
+        font-size: 18px;
+    }
+
+    .titulo-header img {
+        width: 46px;
+        height: 46px;
+    }
+
+    #btn-sair {
+        min-width: auto;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .segundo-header {
+        overflow-x: auto;
+    }
+
+    nav button {
+        min-width: 96px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .caixa-produtos {
+        width: calc(100% - 20px);
+        margin-top: 18px;
+    }
+
+    .cabecalho-produtos {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .filtros {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    #pesquisaTabela {
+        width: 260px;
+    }
+}

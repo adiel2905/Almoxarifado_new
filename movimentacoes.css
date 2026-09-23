@@ -1,0 +1,489 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 174px 0 40px;
+    width: 100%;
+    overflow-x: hidden;
+    background: #f4f5f7;
+    color: #2b2f33;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+button,
+input,
+select {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* =========================================================
+   CABEÇALHO PRINCIPAL
+========================================================= */
+
+.header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 92px;
+    padding: 0 34px;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(110deg, #dc2b27 0%, #ed5a1c 58%, #f28a10 100%);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.titulo-header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #fff;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.titulo-header img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+}
+
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
+.segundo-header {
+    position: fixed;
+    top: 92px;
+    left: 0;
+    z-index: 999;
+
+    width: 100%;
+    height: 54px;
+    padding: 0 34px;
+
+    display: flex;
+    align-items: center;
+
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(20, 25, 30, .04);
+}
+
+.segundo-header nav {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+}
+
+nav button {
+    position: relative;
+    min-width: 112px;
+    padding: 0 16px;
+
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #555b61;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: color .2s ease, background .2s ease;
+}
+
+nav button:hover {
+    background: #f7f7f8;
+    color: #df4b22;
+}
+
+nav button::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+    height: 2px;
+    background: transparent;
+}
+
+/* Movimentação ativa */
+nav button:nth-child(2) {
+    color: #df4b22;
+}
+
+nav button:nth-child(2)::after {
+    background: #df4b22;
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+.caixa-movimentacoes {
+    width: 90%;
+    max-width: 1480px;
+    margin: 28px auto 0;
+    padding: 0;
+
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 9px;
+    box-shadow: 0 4px 14px rgba(31, 41, 55, .055);
+}
+
+.cabecalho-movimentacoes {
+    min-width: 1080px;
+    margin: 0;
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-bottom: 1px solid #e8eaed;
+}
+
+.cabecalho-movimentacoes h2 {
+    margin: 0;
+    color: #272b30;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.filtros-movimentacao {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.filtros-movimentacao input,
+.filtros-movimentacao select,
+.filtro-periodo select {
+    min-height: 39px;
+    padding: 9px 12px;
+
+    border: 1px solid #d8dce1;
+    border-radius: 6px;
+    background: #fff;
+    color: #383d42;
+
+    font-size: 12.5px;
+    outline: none;
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+#pesquisaMovimentacao {
+    width: 270px;
+}
+
+#filtroMovimento {
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.filtros-movimentacao input::placeholder {
+    color: #9aa0a6;
+}
+
+.filtros-movimentacao input:focus,
+.filtros-movimentacao select:focus,
+.filtro-periodo select:focus {
+    border-color: #e56b35;
+    box-shadow: 0 0 0 3px rgba(229,107,53,.09);
+}
+
+/* Botão Gerar PDF */
+.filtros-movimentacao button {
+    min-height: 39px;
+    padding: 9px 14px;
+
+    border: 1px solid #d6dadd;
+    border-radius: 6px;
+    background: #f8f9fa;
+    color: #474d53;
+
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background .18s ease, border-color .18s ease, transform .15s ease;
+}
+
+.filtros-movimentacao button:hover {
+    background: #eef0f2;
+    border-color: #c9cdd2;
+    transform: translateY(-1px);
+}
+
+/* Filtro de período */
+.filtro-periodo {
+    min-width: 1080px;
+    padding: 14px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #fbfbfc;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.filtro-periodo label {
+    color: #5d6369;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+#filtroPeriodo {
+    min-width: 165px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.caixa-movimentacoes table {
+    width: 100%;
+    min-width: 1080px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.caixa-movimentacoes thead {
+    background: #f7f8f9;
+}
+
+.caixa-movimentacoes th {
+    padding: 12px 16px;
+    border-bottom: 1px solid #dfe3e7;
+
+    background: #f7f8f9;
+    color: #60666d;
+    text-align: left;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .35px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.caixa-movimentacoes td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #eceef0;
+
+    color: #34393e;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.caixa-movimentacoes tbody tr {
+    background: #fff;
+    transition: background .15s ease;
+}
+
+.caixa-movimentacoes tbody tr:nth-child(even) {
+    background: #fcfcfd;
+}
+
+.caixa-movimentacoes tbody tr:hover {
+    background: #fff8f4;
+}
+
+.caixa-movimentacoes tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.caixa-movimentacoes td:last-child {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+    body {
+        padding-top: 168px;
+    }
+
+    .header-principal {
+        height: 86px;
+        padding: 0 20px;
+    }
+
+    .titulo-header {
+        font-size: 22px;
+    }
+
+    .titulo-header img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .segundo-header {
+        top: 86px;
+        padding: 0 14px;
+    }
+
+    .caixa-movimentacoes {
+        width: 94%;
+        margin-top: 26px;
+    }
+}
+
+@media (max-width: 700px) {
+    .header-principal {
+        padding: 0 14px;
+    }
+
+    .titulo-header {
+        gap: 8px;
+        font-size: 18px;
+    }
+
+    .titulo-header img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .segundo-header {
+        overflow-x: auto;
+    }
+
+    nav button {
+        min-width: 96px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .caixa-movimentacoes {
+        width: calc(100% - 20px);
+        margin-top: 18px;
+    }
+}
+
+/* =========================================================
+   MODAL - FILTRO DO PDF
+========================================================= */
+.modal-pdf {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(24, 28, 32, .48);
+    backdrop-filter: blur(2px);
+}
+
+.modal-pdf.aberto { display: flex; }
+
+.modal-pdf-conteudo {
+    width: min(520px, 100%);
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    box-shadow: 0 22px 60px rgba(20, 25, 30, .22);
+}
+
+.modal-pdf-cabecalho {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid #eceef0;
+}
+
+.modal-pdf-cabecalho h3 { margin: 0 0 5px; font-size: 19px; color: #272b30; }
+.modal-pdf-cabecalho p { margin: 0; font-size: 12.5px; color: #747b82; }
+.modal-pdf-fechar { border: 0; background: transparent; color: #777; font-size: 27px; line-height: 1; cursor: pointer; }
+
+.modal-pdf-corpo { padding: 22px 24px; }
+.modal-pdf-corpo > label,
+.campo-data-pdf label,
+.periodo-datas-pdf label {
+    display: block;
+    margin: 0 0 7px;
+    color: #4c5258;
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.modal-pdf-corpo select,
+.modal-pdf-corpo input {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 11px;
+    border: 1px solid #d8dce1;
+    border-radius: 7px;
+    background: #fff;
+    color: #383d42;
+    outline: none;
+}
+
+.modal-pdf-corpo select:focus,
+.modal-pdf-corpo input:focus {
+    border-color: #e56b35;
+    box-shadow: 0 0 0 3px rgba(229,107,53,.09);
+}
+
+.campo-data-pdf, .periodo-datas-pdf { margin: 17px 0; }
+.periodo-datas-pdf { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.modal-pdf-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    padding: 16px 24px 20px;
+    background: #fbfbfc;
+    border-top: 1px solid #eceef0;
+}
+
+.modal-pdf-acoes button {
+    min-height: 40px;
+    padding: 9px 16px;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-cancelar-pdf { border: 1px solid #d6dadd; background: #fff; color: #555b61; }
+.btn-gerar-pdf { border: 1px solid #df4b22; background: #f05a1a; color: #fff; }
+.btn-gerar-pdf:hover { background: #df4b22; }
+
+@media (max-width: 520px) {
+    .periodo-datas-pdf { grid-template-columns: 1fr; }
+    .modal-pdf-acoes { flex-direction: column-reverse; }
+    .modal-pdf-acoes button { width: 100%; }
+}

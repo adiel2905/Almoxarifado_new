@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almoxarifado - Configurações</title>
+    <link rel="stylesheet" href="configuracoes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-principal">
+        <h1 class="titulo-header">
+            <img src="imagens/download.png" alt="Logo">
+            Almoxarifado
+        </h1>
+        <button id="btn-sair">Sair</button>
+    </header>
+
+    <header class="segundo-header">
+        <nav>
+            <button onclick="window.location.href='dashboard.html'">Dashboard</button>
+            <button onclick="window.location.href='movimentacoes.html'">Movimentação</button>
+            <button onclick="window.location.href='ppc.html'">PPC</button>
+            <button onclick="window.location.href='configuracoes.html'">Configurações</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="titulo-pagina">
+            <h2>⚙️ Configurações</h2>
+            <p>Gerencie as pessoas que podem entrar no controle do Almoxarifado.</p>
+        </section>
+
+        <section class="card-config">
+            <div class="card-cabecalho">
+                <div>
+                    <h3>Pessoas com acesso</h3>
+                    <p>Todos utilizam a mesma senha geral do Almoxarifado.</p>
+                </div>
+
+                <div class="novo-usuario">
+                    <input id="nomeUsuario" type="text" placeholder="Nome da pessoa" autocomplete="off">
+                    <button id="btn-adicionar-usuario">+ Adicionar</button>
+                </div>
+            </div>
+
+            <div id="listaUsuarios" class="lista-usuarios">
+                <p class="carregando">Carregando...</p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="configuracoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login {
+    width: min(850px, 100%);
+    min-height: 500px;
+    background-color: rgb(240, 235, 235);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 12px 34px rgba(0,0,0,.12);
+}
+
+.header-login {
+    background: linear-gradient(to right, #E92525, #F05A1A, #F58A0A);
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-header-login {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.titulo-header-login img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.conteudo-login {
+    padding: 42px 10% 12px;
+    text-align: center;
+}
+
+.conteudo-login h2 {
+    margin: 0 0 6px;
+    color: #34383c;
+    font-size: 22px;
+}
+
+.subtitulo-login {
+    margin: 0 0 22px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.lista-usuarios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.usuario-login {
+    margin: 0;
+    padding: 11px 18px;
+    border: 1px solid #d7dadd;
+    border-radius: 8px;
+    background: #fff;
+    color: #3e444a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .18s ease;
+}
+
+.usuario-login:hover {
+    border-color: #F05A1A;
+    color: #df4b22;
+}
+
+.usuario-login.selecionado {
+    border-color: #F05A1A;
+    background: #F05A1A;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(240,90,26,.25);
+}
+
+.carregando, .sem-usuarios {
+    width: 100%;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+#senha {
+    width: 80%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+#senha:focus {
+    border-color: #F05A1A;
+    box-shadow: 0 0 0 3px rgba(240,90,26,.12);
+}
+
+#botao-login {
+    display: block;
+    margin: 20px auto 34px;
+    padding: 12px 38px;
+    border: 0;
+    border-radius: 8px;
+    background: #F05A1A;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#botao-login:hover {
+    background: #df4b22;
+}
+
+@media (max-width: 600px) {
+    .header-login { height: 100px; }
+    .titulo-header-login { font-size: 21px; gap: 4px; }
+    .titulo-header-login img { width: 100px; height: 100px; }
+    .conteudo-login { padding: 35px 20px 10px; }
+    #senha { width: 100%; }
+}

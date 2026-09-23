@@ -1,0 +1,104 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 174px 0 40px;
+    background: #f4f5f7;
+    color: #34383c;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-principal {
+    position: fixed;
+    top: 0; left: 0; z-index: 1000;
+    width: 100%; height: 92px;
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(to right, #E92525, #F05A1A, #F58A0A);
+}
+
+.titulo-header {
+    margin: 0;
+    display: flex; align-items: center; gap: 10px;
+    color: white; font-size: 28px; font-weight: 800;
+}
+
+.titulo-header img { width: 125px; height: 125px; object-fit: contain; }
+
+#btn-sair {
+    padding: 9px 18px; border: 1px solid rgba(255,255,255,.8); border-radius: 6px;
+    background: transparent; color: white; font-family: inherit; font-weight: 700; cursor: pointer;
+}
+#btn-sair:hover { background: rgba(255,255,255,.15); }
+
+.segundo-header {
+    position: fixed; top: 92px; left: 0; z-index: 999;
+    width: 100%; height: 54px; padding: 0 5%;
+    background: white; border-bottom: 1px solid #e4e6e8;
+}
+.segundo-header nav { height: 100%; display: flex; align-items: stretch; gap: 4px; }
+nav button {
+    position: relative; min-width: 112px; padding: 0 16px; border: 0; border-radius: 0;
+    background: transparent; color: #555b61; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+nav button:hover { background: #f7f7f8; color: #df4b22; }
+nav button::after { content: ''; position: absolute; left: 16px; right: 16px; bottom: 0; height: 2px; background: transparent; }
+nav button:nth-child(4) { color: #df4b22; }
+nav button:nth-child(4)::after { background: #df4b22; }
+
+.container { width: min(1100px, 90%); margin: 0 auto; }
+.titulo-pagina { margin-bottom: 20px; }
+.titulo-pagina h2 { margin: 0 0 6px; font-size: 24px; }
+.titulo-pagina p { margin: 0; color: #6c757d; font-size: 14px; }
+
+.card-config { background: white; border: 1px solid #e4e6e8; border-radius: 10px; overflow: hidden; }
+.card-cabecalho {
+    padding: 22px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    border-bottom: 1px solid #eceeef;
+}
+.card-cabecalho h3 { margin: 0 0 5px; font-size: 18px; }
+.card-cabecalho p { margin: 0; color: #6c757d; font-size: 12px; }
+.novo-usuario { display: flex; gap: 8px; }
+.novo-usuario input {
+    width: 240px; padding: 10px 12px; border: 1px solid #ced4da; border-radius: 6px;
+    font-family: inherit; outline: none;
+}
+.novo-usuario input:focus { border-color: #F05A1A; box-shadow: 0 0 0 3px rgba(240,90,26,.1); }
+#btn-adicionar-usuario {
+    padding: 10px 15px; border: 0; border-radius: 6px; background: #198754; color: white;
+    font-family: inherit; font-weight: 700; cursor: pointer;
+}
+#btn-adicionar-usuario:hover { background: #146c43; }
+
+.lista-usuarios { padding: 8px 22px 18px; }
+.usuario-item {
+    min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 15px;
+    border-bottom: 1px solid #f0f1f2;
+}
+.usuario-item:last-child { border-bottom: 0; }
+.usuario-info { display: flex; align-items: center; gap: 12px; }
+.avatar {
+    width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+    background: #f3f4f5; color: #df4b22; font-weight: 800;
+}
+.usuario-nome { font-weight: 700; font-size: 14px; }
+.usuario-atual { margin-left: 8px; color: #198754; font-size: 11px; font-weight: 700; }
+.btn-excluir {
+    padding: 7px 11px; border: 1px solid #dc3545; border-radius: 5px; background: white; color: #dc3545;
+    font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.btn-excluir:hover { background: #dc3545; color: white; }
+.btn-excluir:disabled { opacity: .45; cursor: not-allowed; }
+.carregando, .vazio { color: #6c757d; font-size: 13px; }
+
+@media (max-width: 700px) {
+    body { padding-top: 160px; }
+    .header-principal { height: 82px; padding: 0 16px; }
+    .titulo-header { font-size: 20px; }
+    .titulo-header img { width: 90px; height: 90px; }
+    .segundo-header { top: 82px; height: 54px; padding: 0; overflow-x: auto; }
+    nav button { min-width: 104px; padding: 0 10px; }
+    .card-cabecalho { align-items: stretch; flex-direction: column; }
+    .novo-usuario { flex-direction: column; }
+    .novo-usuario input { width: 100%; }
+}

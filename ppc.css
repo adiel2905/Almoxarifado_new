@@ -1,0 +1,352 @@
+/* =========================================================
+   PPC - VISUAL PROFISSIONAL
+   Mantém o HTML e o JS atuais
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 165px 0 0;
+    width: 100%;
+    overflow-x: hidden;
+    background: #f4f5f7;
+    color: #2f3337;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* =========================================================
+   HEADER PRINCIPAL
+========================================================= */
+
+.header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 105px;
+    padding: 0 32px;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(90deg, #e92525 0%, #f05a1a 58%, #f58a0a 100%);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.titulo-header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #fff;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.titulo-header img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+}
+
+/* =========================================================
+   MENU SUPERIOR
+========================================================= */
+
+.segundo-header {
+    position: fixed;
+    top: 105px;
+    left: 0;
+    z-index: 999;
+
+    width: 100%;
+    min-height: 58px;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+
+    background: #fff;
+    border-bottom: 1px solid #e5e7ea;
+    box-shadow: 0 2px 6px rgba(22, 29, 37, 0.04);
+}
+
+.segundo-header nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+nav button {
+    position: relative;
+    border: 0;
+    background: transparent;
+    padding: 18px 16px 16px;
+
+    color: #555b61;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    border-radius: 0;
+    transition: color .2s ease, background .2s ease;
+}
+
+nav button:hover {
+    color: #e94a20;
+    background: #fafafa;
+}
+
+/* PPC é o terceiro botão */
+nav button:nth-child(3) {
+    color: #e94a20;
+}
+
+nav button:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+    height: 3px;
+    background: #f05a1a;
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+.container {
+    width: calc(100% - 64px);
+    max-width: 1480px;
+    margin: 32px auto 48px;
+}
+
+.titulo-pagina {
+    margin-bottom: 22px;
+}
+
+.titulo-pagina h1 {
+    margin: 0 0 6px;
+    color: #282d32;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.titulo-pagina p {
+    margin: 0;
+    color: #747b82;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.barra-filtros {
+    margin-bottom: 18px;
+    padding: 16px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #fff;
+    border: 1px solid #e5e7ea;
+    border-radius: 8px;
+}
+
+.barra-filtros input,
+.barra-filtros select {
+    height: 42px;
+    border: 1px solid #d8dce1;
+    border-radius: 6px;
+    background: #fff;
+
+    color: #34393f;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.barra-filtros input {
+    width: 340px;
+    padding: 0 13px;
+}
+
+.barra-filtros select {
+    min-width: 190px;
+    padding: 0 34px 0 12px;
+    cursor: pointer;
+}
+
+.barra-filtros input::placeholder {
+    color: #9aa0a6;
+}
+
+.barra-filtros input:focus,
+.barra-filtros select:focus {
+    outline: none;
+    border-color: #f05a1a;
+    box-shadow: 0 0 0 3px rgba(240, 90, 26, 0.10);
+}
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+
+    background: #fff;
+    border: 1px solid #e4e7eb;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(24, 32, 41, 0.04);
+}
+
+.tabela-container table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+}
+
+.tabela-container thead {
+    background: #f7f8f9;
+}
+
+.tabela-container th {
+    padding: 14px 18px;
+    border-bottom: 1px solid #dfe3e7;
+
+    color: #596068;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .25px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.tabela-container td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #eceef1;
+
+    color: #3d4349;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.tabela-container tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.tabela-container tbody tr {
+    transition: background .15s ease;
+}
+
+.tabela-container tbody tr:hover {
+    background: #fffaf7;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.vermelho,
+.amarelo,
+.verde {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 4px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.vermelho {
+    color: #b42318;
+    background: #fff1f0;
+    border: 1px solid #ffd5d2;
+}
+
+.amarelo {
+    color: #8a5b00;
+    background: #fff8e6;
+    border: 1px solid #ffe2a8;
+}
+
+.verde {
+    color: #177245;
+    background: #edf8f2;
+    border: 1px solid #ccebd9;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+    body {
+        padding-top: 158px;
+    }
+
+    .header-principal {
+        height: 100px;
+        padding: 0 20px;
+    }
+
+    .segundo-header {
+        top: 100px;
+        padding: 0 12px;
+    }
+
+    .container {
+        width: calc(100% - 28px);
+        margin-top: 24px;
+    }
+
+    .barra-filtros {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .barra-filtros input,
+    .barra-filtros select {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .titulo-header {
+        font-size: 23px;
+    }
+
+    .titulo-header img {
+        width: 56px;
+        height: 56px;
+    }
+
+    nav button {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+    }
+
+    .titulo-pagina h1 {
+        font-size: 22px;
+    }
+}
